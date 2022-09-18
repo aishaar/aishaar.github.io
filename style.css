@@ -1,0 +1,105 @@
+/* Header and Navigation Bar css */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 0px 20px;
+}
+
+nav ul li a {
+    font-size: 21px;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Home and About CSS */
+#my-section {
+    /* border: 1px dashed red; */
+    padding: 10px;
+    height: auto;
+    margin-left:50px;
+}
+
+#my-about-section {
+    /* border: 2px solid black; */
+    padding: 20px;
+    width: 50%;
+}
+
+#my-about-section code {
+    font-size: 22px;
+}
+
+#my-about-section h2 {
+    font-size: 47px;
+    margin: 0px;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+#my-about-section h3 {
+    font-size: 30px;
+    margin: 0px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#my-about-section h4 {
+    font-size: 23px;
+    font-family: 'Courier New', Courier, monospace;   
+}
+
+.home-btns {
+    /* border: 3px dotted purple; */
+    padding-left: 20px;
+}
+
+.home-btns button {
+    height: 50px;
+    padding: 0px;
+    background: palegreen;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 160ms ease-in;
+    padding: 10px;
+}
+
+.home-btns button:hover {
+    background: palegoldenrod;
+}
+
+.home-btns button:active {
+    background: khaki;
+    transform: scale(.95);
+}
+
+#git-btn {
+    margin-left: 110px;
+}
+
+#lin-btn {
+    margin-left: 120px;
+}
+
+#my-about-img {
+    /* border: 2px solid black; */
+    width: 400px;
+    position:relative;
+    left: 800px;
+    bottom:450px;
+}
+
