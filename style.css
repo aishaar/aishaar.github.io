@@ -1,105 +1,162 @@
-/* Header and Navigation Bar css */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Caveat:wght@500&family=Cormorant+Garamond:wght@500&family=Shadows+Into+Light&family=Silkscreen&family=Special+Elite&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    padding: 0px 20px;
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px; */
 }
 
-nav ul li a {
-    font-size: 21px;
-    font-weight: bold;
-    font-variant: small-caps;
-    color: black;
+:root{
+    --primary-color: rgb(209, 80, 80);
+    --primary-shades: rgb(214, 134, 134);
+    --para-color: #80849C;
+    --helper-color: #1264FA;
+    --white: #fff; 
+    --font-color: black;
+
+    --main-headings-size: 5rem;
+    --sub-headings-size: 3.5rem;
+    --para-size: 2.3rem;
+
+    --font-style-main: 'Silkscreen', cursive;
+    --font-style-secondary:'Alkalami', serif;
+    --font-style-para: 'Cormorant Garamond', serif;
+
+    /* font-family: 'Alkalami', serif;
+font-family: 'Caveat', cursive;
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Silkscreen', cursive;
+font-family: 'Special Elite', cursive; */
+}
+
+a {
     text-decoration: none;
-    cursor: pointer;
+    display: inline-block;
 }
 
-/* Home and About CSS */
-#my-section {
-    /* border: 1px dashed red; */
-    padding: 10px;
-    height: auto;
-    margin-left:50px;
+img {
+    display: inline-block;
 }
 
-#my-about-section {
-    /* border: 2px solid black; */
-    padding: 20px;
-    width: 50%;
+li {
+    list-style: none;
 }
 
-#my-about-section code {
-    font-size: 22px;
+.para {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    font-weight: 400; 
 }
 
-#my-about-section h2 {
-    font-size: 47px;
-    margin: 0px;
-    font-family:Arial, Helvetica, sans-serif;
-
+/* Header and navbar style  */
+.header {
+    height: 7.2rem;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 3rem;
 }
 
-#my-about-section h3 {
-    font-size: 30px;
-    margin: 0px;
-    font-family:Arial, Helvetica, sans-serif;
+.logo-img {
+    width: 15rem;
 }
 
-#my-about-section h4 {
-    font-size: 23px;
-    font-family: 'Courier New', Courier, monospace;   
+.navbar-list {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+    font-size:1.9rem;  
+    font-family: var(--font-style-main);
 }
 
-.home-btns {
-    /* border: 3px dotted purple; */
-    padding-left: 20px;
+.navbarlink{
+    text-transform: uppercase;
+    color: var(--font-color);
+    font-weight: bolder;
 }
 
-.home-btns button {
-    height: 50px;
-    padding: 0px;
-    background: palegreen;
-    border:none;
-    outline: none;
-    border-radius: 5px;
-    overflow: hidden;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 160ms ease-in;
-    padding: 10px;
+.navbar-list .navbarlink:hover,
+.navbar-list .navbarlink:active {
+    color: var(--font-color);
 }
 
-.home-btns button:hover {
-    background: palegoldenrod;
+.mobile-nav-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
 }
 
-.home-btns button:active {
-    background: khaki;
-    transform: scale(.95);
+.mobile-navbar-btn {
+    display:none;
 }
 
-#git-btn {
-    margin-left: 110px;
+.mobile-nav-icon [name="close"] {
+    display:none;
 }
 
-#lin-btn {
-    margin-left: 120px;
+/* resuable code */
+.section {
+    padding: 8.4rem;
 }
 
-#my-about-img {
-    /* border: 2px solid black; */
-    width: 400px;
-    position:relative;
-    left: 800px;
-    bottom:450px;
+.container {
+    max-width: 130rem;
 }
 
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.grid-two-column {
+    grid-template-columns: repeat(2 , 1fr);
+}
+
+.primary-heading {
+    font-size: var(--main-headings-size);
+    font-family: var(--font-style-secondary);
+}
+
+.secondary-heading {
+    font-size: var(--sub-headings-size);
+    font-family: var(--font-style-secondary);
+}
+
+.hero-para {
+    font-size: var(--para-size);
+    font-family: var(--font-style-para);
+}
+
+.btn {
+    font-size:1.8rem;
+    text-transform: capitalize;
+    padding: 1.4rem 2.4rem; 
+    background-color: black;
+    color: var(--white);
+    transition: all 0.2s linear; 
+    border-radius: 2rem;
+}
+
+.btn:hover, .btn:active {
+    transform: scale(1.05);
+}
+
+.image {
+    width: 85%;
+}
+
+/* .navbar {
+    display: flex;
+    align-items: center; 
+} */
+
+
+/* .hero-btn-icon {
+    size: 7rem;
+} */

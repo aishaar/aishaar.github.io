@@ -9,20 +9,23 @@
 </head>
 <body>
     <!-- Header and Navigation code  -->
-    <header>
-        <div class="logo">
-            <img src = "logo.PNG" alt = "Aisha" style="width: 120px;">
-        </div>
-        <nav>
-            <ul>
-                <li><a href = "#"> Home </a></li>
-                <li> <a href = "#"> Skills  </a></li>
-                <li> <a href = "#"> Projects </a></li>
-                <li> <a href = "#"> Contact </a></li>
+    <header class="header">
+        <a href = "#" target = "_blank"> <img src="Images/logo.PNG" alt="Aisha" class="logo-img"></a>
+        <nav class = "navbar"> 
+            <ul class="navbar-list">
+                <li><a href="#" class="navbarlink" > Home </a> </li>
+                <li><a href="#" class="navbarlink" > Skills </a> </li>
+                <li><a href="#" class="navbarlink" > Projects </a> </li>
+                <li><a href="#" class="navbarlink" > Contact </a> </li>
             </ul>
         </nav>
+        <div class="mobile-navbar-btn">
+            <ion-icon name="menu" class="mobile-nav-icon"></ion-icon>
+            <ion-icon name="close" class="mobile-nav-icon"></ion-icon>
+        </div>
     </header>
-    <!-- Home (About) code  -->
+
+    <!-- Home (About) code 
     <div id = "home">
         <div id = "my-section">
             <div id = "my-about-section">
@@ -40,9 +43,38 @@
                 </div>
             </div>
             <div id = "my-about-img">
-                <img src="Code.gif" alt="Aisha" style="width: 400px; height:400px">
+                <img src="Images/Code.gif" alt="Aisha" style="width: 400px; height:400px">
             </div>
         </div>
-    </div>
+    </div> -->
+    <main>
+        <section class="section section-hero">
+            <div class="container grid grid-two-column">
+                <div class="hero-data">
+                    <h2 class="primary-heading"> Hi, I am Aisha 👋🏻</h2>
+                    <h3 class="secondary-heading"> and I am a <span class = "type"> Front-end Developer </span></h3>
+                    <p class="hero-para">
+                        An Aspiring Software developer with special interest in working with
+                        Front-end technologies. Have experience in building various web applications
+                        with some cool libraries and frameworks. Resume available on request. <br><br>
+                        Have a nice day ahead !🙂
+                    </p>
+                    <div class="hero-buttons">
+                        <div class="grid grid-two-column">
+                            <div class="hero-btns-style">
+                                <br> <br>
+                                <button class ="btn"><ion-icon name="logo-github" class="hero-btn-icon"></ion-icon> Github</button> 
+                                <button class="btn"><ion-icon name="logo-linkedin" class="hero-btn-icon"></ion-icon> LinkedIn </button>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="hero-image">
+                    <img src="Images/Code.gif" alt="Aisha" class="image">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 </html>
