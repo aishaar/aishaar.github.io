@@ -8,6 +8,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
     /* 1rem = 10px; */
 }
 
@@ -61,6 +62,7 @@ li {
     justify-content:space-between;
     align-items:center;
     padding: 3rem;
+    background-color: rgb(250, 231, 207);
 }
 
 .logo-img {
@@ -128,6 +130,12 @@ li {
     font-family: var(--font-style-secondary);
 }
 
+.sub-heading {
+    font-size: var(--main-headings-size);
+    font-family: var(--font-style-secondary);
+    text-align: center;
+}
+
 .hero-para {
     font-size: var(--para-size);
     font-family: var(--font-style-para);
@@ -151,12 +159,24 @@ li {
     width: 85%;
 }
 
-/* .navbar {
-    display: flex;
-    align-items: center; 
-} */
+/* This is the skills sections css  */
 
+.skills-section {
+    padding: 2.5rem;
+    margin:1.5rem; 
+}
 
-/* .hero-btn-icon {
-    size: 7rem;
-} */
+.skills-grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .skills-item {
+    padding: 2rem;
+  }
+  
+  .skills-image {
+    width: 10rem;
+  }
