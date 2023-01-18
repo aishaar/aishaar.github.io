@@ -180,3 +180,72 @@ li {
   .skills-image {
     width: 10rem;
   }
+
+/* This is the project section css */
+
+.projects-section {
+    padding: 2.5rem;
+    margin:1.5rem; 
+}
+
+.projects-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .projects-item {
+    /* can reduce the padding and margin etc after final */
+    padding: 1rem;
+    background-color: antiquewhite;
+  }
+
+  .projects-image-wrapper {
+    /* background-color: palevioletred; */
+  }
+  
+  .projects-image {
+    width: 30rem; 
+    height: 22rem;
+  }
+
+  .tech-stacks{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    padding: .5rem;
+    margin: .5rem;
+  }
+
+  .tech-stacks-2{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    padding: .5rem;
+    margin: .5rem;
+  }
+
+  .tech-stack-image {
+    width: 3.5rem;
+  }
+
+  .projects-name {
+    font-family: var(--font-style-secondary);
+    font-size: 2.5rem ;
+    font-weight: bold;
+  }
+
+  .projects-description {
+    font-size: 1.7rem;
+    text-align: justify;  
+  }
+
+  .divider {
+    height:2px;
+    border-width:0;
+    color:gray;
+    background-color:gray
+  }
+
+
