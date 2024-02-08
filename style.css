@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 html {
@@ -18,15 +18,19 @@ html {
     --para-color: #80849C;
     --helper-color: #1264FA;
     --white: #fff; 
-    --font-color: black;
+    --black: black;
 
-    --main-headings-size: 5rem;
-    --sub-headings-size: 3.5rem;
-    --para-size: 2.3rem;
+    --main-heading-text-size: 55px;
+    --sub-heading-text-size: 35px; 
+    --para-text-size: 23px;
 
     --font-style-main: 'Silkscreen', cursive;
     --font-style-secondary:'Alkalami', serif;
     --font-style-para: 'Cormorant Garamond', serif;
+
+    /* For smaller screens */
+    --main-heading-small-size: 35px;
+    --para-text-small-size: 16px;
 
     /* font-family: 'Alkalami', serif;
 font-family: 'Caveat', cursive;
@@ -34,11 +38,13 @@ font-family: 'Cormorant Garamond', serif;
 font-family: 'Shadows Into Light', cursive;
 font-family: 'Silkscreen', cursive;
 font-family: 'Special Elite', cursive; */
-}
+}   
+
+/*===========================================================================================*/
 
 /* CSS for Navigation Bar*/
 header {
-    background: var(--font-color);
+    background: var(--black);
 }
 
 nav { 
@@ -97,7 +103,63 @@ a:active, a:hover {
     display: none;
 }
 
-/* ============RESPONSIVE DESIGN================*/
+/*===================================HOME SECTION CSS=========================================*/
+.intro-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.intro-para {
+    flex: 1;
+    height: 500px;
+}
+
+.intro {
+    font-size: var(--main-heading-text-size);
+    font-family: var(--font-style-secondary);
+    margin: 20px;
+}
+
+.wave {
+    animation-name: hand-wave-animation;
+    animation-duration: 2.5s;        
+    animation-iteration-count: infinite; 
+    transform-origin: 70% 70%;      
+    display: inline-block;
+  }
+  
+  @keyframes hand-wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) } 
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  
+    100% { transform: rotate( 0.0deg) }
+  }
+
+.intro-summary {
+   font-family: var(--font-style-secondary);
+   font-size: var(--para-text-size);
+   margin: 20px;
+   text-align: justify;
+}
+
+.intro-image {
+    flex: 1;
+    height: 500px;
+    align-items: center;
+}
+
+#code-img {
+    height: 450px;
+    margin: auto;
+    display: block;
+}
+
+/* ================================RESPONSIVE DESIGN===========================================*/
 @media (max-width:952px){
 
     .logo{
@@ -110,7 +172,9 @@ a:active, a:hover {
     .checkBtn{
         display: block;
     }
-    ul{
+
+    ul
+    {
         position: fixed;
         width: 100%;
         height: 100vh;
@@ -120,209 +184,57 @@ a:active, a:hover {
         text-align: center;
         transition: all .5%;
     }
+
     #check:checked ~ ul {
         left:0;
     }
+
     nav ul li{
         display: block;
         margin: 50px 0px;
         line-height: 30px;
     }
+
     nav ul li a{
         font-size: 20px;
+    }
+
+    /**/
+    .intro-container {
+        height: 550px;
+        flex-direction: column;
+    }
+
+    .intro {
+        font-size: var(--main-heading-small-size) ;
+    }
+
+    .intro-summary {
+        font-size: var(--para-text-small-size);
+    }
+
+    #code-img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 350px){
+  
+    .intro {
+        font-size: 25px;
+    }
+
+    .intro-summary {
+        font-size: 15px;
+    }
+
+    #code-img {
+        height: 250px;
     }
 }
 
 
 /**/
 
-
-
-img {
-    display: inline-block;
-}
-
-.para {
-    font-size: 1.6rem;
-    line-height: 1.7;
-    font-weight: 400; 
-}
-
-
-/* resuable code */
-.section {
-    padding: 8.4rem;
-}
-
-.container {
-    max-width: 130rem;
-}
-
-.grid {
-    display: grid;
-    gap: 2rem;
-}
-
-.grid-two-column {
-    grid-template-columns: repeat(2 , 1fr);
-}
-
-.primary-heading {
-    font-size: var(--main-headings-size);
-    font-family: var(--font-style-secondary);
-}
-
-.secondary-heading {
-    font-size: var(--sub-headings-size);
-    font-family: var(--font-style-secondary);
-}
-
-.sub-heading {
-    font-size: var(--main-headings-size);
-    font-family: var(--font-style-secondary);
-    text-align: center;
-}
-
-.hero-para {
-    font-size: var(--para-size);
-    font-family: var(--font-style-para);
-    text-align: justify;
-}
-
-.btn {
-    font-size:1.8rem;
-    padding: 1.4rem 2.4rem; 
-    background-color: black;
-    color: var(--white);
-    transition: all 0.2s linear; 
-    border-radius: 2rem;
-}
-
-.btn:hover, .btn:active {
-    transform: scale(1.05);
-}
-
-.image {
-    width: 85%;
-}
-
-/* This is the skills sections css  */
-
-/* .skills-section {
-    padding: 2.5rem;
-    margin:1.5rem; 
-}
-
-.skills-grid-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1.5rem;
-    text-align: center;
-  }
-
-  .skills-item {
-    padding: 2rem;
-  }
-  
-  .skills-image {
-    width: 10rem;
-  } */
-
-/* This is the project section css */
-
-/* .projects-section {
-    padding: 2.5rem;
-    margin:1.5rem; 
-}
-
-.projects-grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    text-align: center;
-  }
-
-  .projects-item { */
-    /* can reduce the padding and margin etc after final */
-    /* padding: 1rem;
-    background-color: antiquewhite;
-  }
-
-  .projects-image-wrapper {
-    /* background-color: palevioletred; 
-  } 
-  
-  .projects-image {
-    width: 30rem; 
-    height: 22rem;
-  }
-
-  .tech-stacks{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    text-align: center;
-    padding: .5rem;
-    margin: .5rem;
-  }
-
-  .tech-stacks-2{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    text-align: center;
-    padding: .5rem;
-    margin: .5rem;
-  }
-
-  .tech-stack-image {
-    width: 3.5rem;
-  }
-
-  .projects-name {
-    font-family: var(--font-style-secondary);
-    font-size: 2.5rem ;
-    font-weight: bold;
-  }
-
-  .projects-description {
-    font-size: 1.7rem;
-    text-align: justify;  
-  }
-
-  .divider {
-    height:2px;
-    border-width:0;
-    color:gray;
-    background-color:gray
-  }
-
-/* This is the contact section css 
-.contact-section {
-    padding: 2.5rem;
-    margin:1.5rem; 
-}
-
-.contact-grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    text-align: center;
-}
-
-.contact-item {
-    /* can reduce the padding and margin etc after final 
-    padding: 1rem;
-}
-
-.contact-line {
-    font-size: var(--para-size);
-    font-family: var(--font-style-secondary);
-    text-align: justify; 
-}
-
-.contact-image {
-width: 15cm;
-}
-
-*/
 
 
