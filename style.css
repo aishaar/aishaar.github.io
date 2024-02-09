@@ -30,8 +30,10 @@ html {
 
     /* For smaller screens */
     --main-heading-small-size: 35px;
-    --para-text-small-size: 16px;
+    --para-text-small-size: 20px;
 
+    --main-heading-smaller-size: 25px;
+    --para-text-smaller-size: 16px;
     /* font-family: 'Alkalami', serif;
 font-family: 'Caveat', cursive;
 font-family: 'Cormorant Garamond', serif;
@@ -159,6 +161,35 @@ a:active, a:hover {
     display: block;
 }
 
+/*============================================ SKILLS SECTION CSS =================================================*/
+
+.section-headings {
+    font-size: var(--main-heading-text-size);
+    font-family: var(--font-style-secondary);
+    text-align: center;
+    margin: 20px;
+}
+
+.skills-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.skills-item { 
+    flex:1;
+    background-color: rgba(231, 212, 212, 0.5);
+    /* border: 2px solid blue; */
+    padding: 20px;
+    margin: 3px;
+    text-align: center;
+}
+
+.skills-image {
+    width: 125px;
+    height: 150px;
+}
+
 /* ================================RESPONSIVE DESIGN===========================================*/
 @media (max-width:952px){
 
@@ -201,11 +232,12 @@ a:active, a:hover {
 
     /**/
     .intro-container {
+        margin-top: 75px;
         height: 550px;
         flex-direction: column;
     }
 
-    .intro {
+    .intro, .section-headings {
         font-size: var(--main-heading-small-size) ;
     }
 
@@ -213,19 +245,28 @@ a:active, a:hover {
         font-size: var(--para-text-small-size);
     }
 
+    .intro-image {
+        margin-bottom: 120px;
+    }
+
     #code-img {
         height: 300px;
     }
+
+    .skills-image {
+        width: 75px;
+        height: 75px;
+    }
 }
 
-@media (max-width: 350px){
-  
-    .intro {
-        font-size: 25px;
+@media (max-width: 450px)
+{
+    .intro, .section-headings {
+        font-size: var(--main-heading-smaller-size)
     }
 
     .intro-summary {
-        font-size: 15px;
+        font-size: var(--para-text-smaller-size)
     }
 
     #code-img {
