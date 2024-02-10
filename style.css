@@ -14,7 +14,7 @@ html {
 
 :root{
     --primary-color: rgb(209, 80, 80);
-    --primary-shades: rgb(214, 134, 134);
+    --primary-shades: rgb(214, 134, 134); 
     --para-color: #80849C;
     --helper-color: #1264FA;
     --white: #fff; 
@@ -190,6 +190,64 @@ a:active, a:hover {
     height: 150px;
 }
 
+/*============================================== PROJECTS SECTION ==================================================*/
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    flex:1;
+    background-color: rgb(231, 212, 212);
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.project-name {
+    font-size: var(--main-heading-small-size);
+    font-family: var(--font-style-secondary);
+    text-align: center;
+}
+
+.project-image {
+    width: 450px;
+    height: 250px;
+}
+
+.code-btns-container {
+    display: flex;
+    margin: 10px 0px;
+}
+
+.code-btn-item {
+    flex: 1;
+}
+
+.code-btn {
+   font-size: 30px;
+   color: var(--black);
+}
+
+.project-description {
+    font-size: var(--para-text-small-size);
+    text-align: justify;
+}
+
+.project-tech-container {
+    display: flex;
+}
+
+.tech-item {
+    flex: 1;
+}
+
+.tech-stack-image {
+    width: 45px;
+    height: 45px;
+}
+
+
 /* ================================RESPONSIVE DESIGN===========================================*/
 @media (max-width:952px){
 
@@ -257,6 +315,12 @@ a:active, a:hover {
         width: 75px;
         height: 75px;
     }
+
+    .project-image {
+        width: 350px;
+        height: 150px;
+    }
+
 }
 
 @media (max-width: 450px)
@@ -271,6 +335,11 @@ a:active, a:hover {
 
     #code-img {
         height: 250px;
+    }
+
+    .project-image {
+        width: 300px;
+        height: 150px;
     }
 }
 
