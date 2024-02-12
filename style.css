@@ -247,6 +247,37 @@ a:active, a:hover {
     height: 45px;
 }
 
+/* ============================================EXPERIENCE SECTION CSS==============================================*/
+.experience-container {
+    display: flex;
+}
+
+.experience-item {
+    flex: 1;
+    background-color: rgba(231, 212, 212, 0.5);
+    padding: 30px;
+    margin: 10px;
+}
+
+.experience-title {
+    font-size: var(--main-heading-small-size);
+    font-family: var(--font-style-secondary);
+}
+
+/* .exp-com-img {
+    width: 100px;
+    height: 100px;
+} */
+
+.experience-details {
+    font-size: 16px;
+    font-family: var(--font-style-secondary);
+}
+
+.experience-summary {
+    font-size: 20px;
+}
+
 
 /* ================================RESPONSIVE DESIGN===========================================*/
 @media (max-width:952px){
