@@ -317,6 +317,28 @@ a:active, a:hover {
    font-size: 65px;
 }
 
+/* ================================FOOTER SECTION CSS===========================================*/
+.footer {
+    background-color: black;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.footer-tag {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--white);
+    text-align: center;
+}
+
+.footer-date {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--white);
+    text-align: right;
+}
+
 /* ================================RESPONSIVE DESIGN===========================================*/
 @media (max-width:952px){
 
