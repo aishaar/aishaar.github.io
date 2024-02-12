@@ -278,6 +278,44 @@ a:active, a:hover {
     font-size: 20px;
 }
 
+/* ============================================CONTACT SECTION CSS==============================================*/
+.contact-container {
+    display: flex;
+    background-color: rgba(231, 212, 212, 0.5);
+}
+
+.contact-item {
+    flex: 1;
+    justify-content: center;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-image {
+    width: 600px;
+    height: 450px;
+}
+
+.contact-summary {
+    font-size: 20px;
+    text-align: justify;
+    font-family: var(--font-style-secondary);
+}
+
+.contact-btns-container {
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+}
+
+.contact-btn-item {
+    flex: 1;
+    text-align: center;
+}
+.contact-btn {
+   font-size: 65px;
+}
 
 /* ================================RESPONSIVE DESIGN===========================================*/
 @media (max-width:952px){
@@ -352,6 +390,10 @@ a:active, a:hover {
         height: 150px;
     }
 
+    .contact-container {
+        flex-direction: column;
+    }
+
 }
 
 @media (max-width: 450px)
@@ -371,6 +413,10 @@ a:active, a:hover {
     .project-image {
         width: 300px;
         height: 150px;
+    }
+
+    .contact-image {
+        width: 370px;
     }
 }
 
