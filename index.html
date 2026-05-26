@@ -1,349 +1,924 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Aisha Abdur Rahim </title>
+    <title>Aisha Abdur Rahim — Software Engineer</title>
     <link rel="icon" type="image/x-icon" href="Images/profile-me.jpg">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
     <header>
         <nav>
-            <input type = "checkbox" id = "check">
-            <label for = "check" class = "checkBtn">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <label for = "Logo" class = "logo"> AAR </label>
-            <ul>
-                <li> <a href = "#home"> Home  </a></li>
-                <li> <a href = "#skills"> Skills  </a></li>
-                <li> <a href = "#projects"> Projects </a></li>
-                <li> <a href = "#experience"> Experience </a></li>
-                <li> <a href = "#contact"> Contact </a></li>
+            <div class="nav-logo">AAR</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="nav-hamburger" id="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
         </nav>
+        <div class="nav-mobile" id="mobileMenu">
+            <ul>
+                <li><a href="#home" onclick="closeMobile()">Home</a></li>
+                <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+                <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+                <li><a href="#experience" onclick="closeMobile()">Experience</a></li>
+                <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>
-        <!-- Home section -->
-        <section id = "home">
-            <div class="intro-container">
-                <div class="intro-para">
-                    <h2 class="intro"> <br> Hello, I am Aisha <span class = "wave"> 👋🏻 </span></h2>
-                    <p class="intro-summary">
-                        An Aspiring Software developer with special interest in working with
-                        Front-end technologies. Have experience in building various web and 
-                        mobile applications with some cool libraries and frameworks. Resume 
-                        available on request. <br>
-                        Have a nice day ahead !🙂
+
+        <!-- ═══════════════════════════════ HOME ═══════════════════════════════ -->
+        <section id="home">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <p class="hero-eyebrow">✦ Open to full-time roles</p>
+                    <h1 class="hero-heading">
+                        Hi, I am <span class="name-highlight">AI</span>sha<span class="wave-emoji"> 👋🏻</span>
+                    </h1>
+                    <p class="hero-wordplay"><em>yes, the AI in my name is very much intentional</em> ✨</p>
+                    <p class="hero-bio">
+                        Full-Stack & Android Engineer · Master's CS @ Northeastern (4.0 GPA).
+                        I believe the best technology is built with genuine curiosity and in an era
+                        flooded with AI-generated everything, I build things that actually
+                        <span class="text-accent">mean something</span>.
                     </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn-primary">See My Work</a>
+                        <a href="mailto:aishaar283@gmail.com" class="btn-secondary">Get in Touch</a>
+                    </div>
                 </div>
-                <div class="intro-image">
-                    <img src="Images/Code.gif" id="code-img" alt="Keep Coding">
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img src="Images/Code.gif" alt="Coding" id="code-img">
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>scroll to explore</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════ SKILLS ═══════════════════════════════ -->
+        <section id="skills">
+            <div class="section-header">
+                <h2 class="section-heading">Tech Stack</h2>
+                <p class="section-subheading">My toolkit: always growing, never done 🛠️</p>
+            </div>
+
+            <div class="skills-box">
+                <!-- Filter tabs -->
+                <div class="skills-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="languages">Languages</button>
+                    <button class="filter-btn" data-filter="frontend">Frontend</button>
+                    <button class="filter-btn" data-filter="backend">Backend</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="tools">Tools & Cloud</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="ai">AI & APIs</button>
+                    <button class="filter-btn" data-filter="others">Others</button>
+                    <button class="filter-btn filter-btn-learning" data-filter="learning">🌱 Currently Learning</button>
+                </div>
+
+                <!-- Skills grid -->
+                <div class="skills-items-grid">
+                    <!-- Languages -->
+                    <div class="tech-item" data-cat="languages"><img src="Images/python.svg" class="tech-icon"><span class="tech-label">Python</span></div>
+                    <div class="tech-item" data-cat="languages mobile"><img src="Images/java2.svg" class="tech-icon"><span class="tech-label">Java</span></div>
+                    <div class="tech-item" data-cat="languages frontend"><img src="Images/jss.svg" class="tech-icon"><span class="tech-label">JavaScript (ES6+)</span></div>
+                    <div class="tech-item" data-cat="languages mobile"><img src="Images/kotlin.svg" class="tech-icon"><span class="tech-label">Kotlin</span></div>
+                    <div class="tech-item" data-cat="languages frontend"><img src="Images/typescript.svg" class="tech-icon"><span class="tech-label">TypeScript</span></div>
+                    <div class="tech-item" data-cat="languages backend"><img src="Images/sql.svg" class="tech-icon"><span class="tech-label">SQL</span></div>
+                    <div class="tech-item" data-cat="languages frontend"><img src="Images/html5.svg" class="tech-icon"><span class="tech-label">HTML5</span></div>
+                    <div class="tech-item" data-cat="languages frontend"><img src="Images/css.svg" class="tech-icon"><span class="tech-label">CSS3</span></div>
+                    <!-- Frontend -->
+                    <div class="tech-item" data-cat="frontend"><img src="Images/react.svg" class="tech-icon"><span class="tech-label">React.js</span></div>
+                    <div class="tech-item" data-cat="frontend"><img src="Images/vue.svg" class="tech-icon"><span class="tech-label">Vue.js</span></div>
+                    <div class="tech-item" data-cat="frontend"><img src="Images/tailwindcss.svg" class="tech-icon"><span class="tech-label">Tailwind CSS</span></div>
+                    <div class="tech-item" data-cat="frontend"><img src="Images/bootstrap.svg" class="tech-icon"><span class="tech-label">Bootstrap</span></div>
+                    <div class="tech-item" data-cat="frontend learning"><img src="Images/nextjs.svg" class="tech-icon"><span class="tech-label">Next.js</span></div>
+                    <!-- Backend -->
+                    <div class="tech-item" data-cat="backend"><img src="Images/node.svg" class="tech-icon"><span class="tech-label">Node.js</span></div>
+                    <div class="tech-item" data-cat="backend"><img src="Images/express.svg" class="tech-icon"><span class="tech-label">Express</span></div>
+                    <div class="tech-item" data-cat="backend"><img src="Images/flask.svg" class="tech-icon"><span class="tech-label">Flask</span></div>
+                    <div class="tech-item" data-cat="backend"><img src="Images/fastapi.svg" class="tech-icon"><span class="tech-label">FastAPI</span></div>
+                    <div class="tech-item" data-cat="backend languages"><img src="Images/php.svg" class="tech-icon"><span class="tech-label">PHP</span></div>
+                    <div class="tech-item" data-cat="backend"><img src="Images/ejs.svg" class="tech-icon"><span class="tech-label">EJS</span></div>
+                    <div class="tech-item" data-cat="backend others"><img src="Images/bs.png" class="tech-icon"><span class="tech-label">BeautifulSoup</span></div>
+                    <div class="tech-item" data-cat="backend tools"><img src="Images/sql3.png" class="tech-icon"><span class="tech-label">SQLite</span></div>
+                    <div class="tech-item" data-cat="backend tools learning"><img src="Images/postgresql.svg" class="tech-icon"><span class="tech-label">PostgreSQL</span></div>
+                    <!-- Mobile -->
+                    <div class="tech-item" data-cat="mobile"><img src="Images/android-studio.svg" class="tech-icon"><span class="tech-label">Android Studio</span></div>
+
+                    <!-- Tools & Cloud -->
+                    <div class="tech-item" data-cat="tools"><img src="Images/git.svg" class="tech-icon"><span class="tech-label">Git</span></div>
+                    <div class="tech-item" data-cat="tools"><img src="Images/github.svg" class="tech-icon"><span class="tech-label">GitHub</span></div>
+                    <div class="tech-item" data-cat="tools"><img src="Images/googlecloud.svg" class="tech-icon"><span class="tech-label">Google Cloud</span></div>
+                    <div class="tech-item" data-cat="tools learning"><img src="Images/aws.svg" class="tech-icon"><span class="tech-label">AWS</span></div>
+                    <div class="tech-item" data-cat="tools"><img src="Images/firebase.svg" class="tech-icon"><span class="tech-label">Firebase</span></div>
+                    <div class="tech-item" data-cat="tools backend"><img src="Images/mongo.svg" class="tech-icon"><span class="tech-label">MongoDB</span></div>
+                    <div class="tech-item" data-cat="tools learning"><img src="Images/docker.svg" class="tech-icon"><span class="tech-label">Docker</span></div>
+                    <div class="tech-item" data-cat="tools"><img src="Images/githubactions.svg" class="tech-icon"><span class="tech-label">CI/CD (GitHub Actions)</span></div>
+                    <div class="tech-item" data-cat="tools"><img src="Images/postman.svg" class="tech-icon"><span class="tech-label">Postman</span></div>
+                    <!-- Design -->
+                    <div class="tech-item" data-cat="design"><img src="Images/figma.svg" class="tech-icon"><span class="tech-label">Figma</span></div>
+                    <div class="tech-item" data-cat="design"><img src="Images/xd.svg" class="tech-icon"><span class="tech-label">Adobe XD</span></div>
+                    <div class="tech-item" data-cat="design"><img src="Images/canva.svg" class="tech-icon"><span class="tech-label">Canva</span></div>
+                    <div class="tech-item" data-cat="design"><img src="Images/miro.png" class="tech-icon"><span class="tech-label">Miro</span></div>
+                    <div class="tech-item" data-cat="design"><img src="Images/bm.png" class="tech-icon"><span class="tech-label">Balsamiq</span></div>
+                    <!-- Others -->
+                    <div class="tech-item" data-cat="others"><img src="Images/arduino.svg" class="tech-icon"><span class="tech-label">Arduino</span></div>
+                    <!-- AI & APIs -->
+                    <div class="tech-item" data-cat="ai"><img src="Images/claudecode.svg" class="tech-icon"><span class="tech-label">Claude Code</span></div>
+                    <div class="tech-item" data-cat="ai"><img src="Images/openai.svg" class="tech-icon"><span class="tech-label">OpenAI</span></div>
+                    <div class="tech-item" data-cat="ai"><img src="Images/codex.svg" class="tech-icon"><span class="tech-label">Codex</span></div>
+                    <div class="tech-item" data-cat="ai"><img src="Images/cursor.svg" class="tech-icon"><span class="tech-label">Cursor</span></div>
+                    <div class="tech-item" data-cat="ai"><img src="Images/gemini.svg" class="tech-icon"><span class="tech-label">Gemini AI</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- Tech Stack Section -->
-        <section id = "skills">
-            <h2 class = "section-headings"> TECH STACK 👩🏻‍💻 </h2>
-            <div class="skills-container">
-                <div class="skills-item">
-                    <img src="Images/html5.svg" alt="HTML5" class="skills-image" title="HTML">
+        <!-- ═══════════════════════════════ PROJECTS ═══════════════════════════════ -->
+        <section id="projects">
+            <div class="section-header">
+                <h2 class="section-heading">Things I've Built</h2>
+                <p class="section-subheading">A collection of projects that kept me up past midnight 🌙</p>
+            </div>
+
+            <div class="slider-container">
+                <button class="slider-btn slider-prev" id="prevBtn" aria-label="Previous project">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="slider-viewport">
+                    <div class="slider-track" id="sliderTrack">
+
+                        <!-- Card 1: Procast -->
+                        <div class="project-card">
+                            <div class="project-card-inner">
+                                <div class="project-img-wrapper">
+                                    <img src="Images/Procast.png" alt="Procast" class="project-img">
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="" class="project-link" title="View Source Code">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                            <a href="" class="project-link" title="Watch Demo">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-number">01</div>
+                                    <h3 class="project-name">Procast 📝</h3>
+                                    <p class="project-desc">
+                                        A science-backed procrastination companion that personalises your productivity journey.
+                                        Built user-specific dashboards, habit tracking, and motivational features using Node.js
+                                        and MongoDB — making the process of staying on task genuinely enjoyable rather than
+                                        another chore on your list.
+                                    </p>
+                                    <div class="project-tech">
+                                        <div class="tech-item"><img src="Images/html5.svg" class="tech-icon"><span class="tech-label">HTML5</span></div>
+                                        <div class="tech-item"><img src="Images/css.svg" class="tech-icon"><span class="tech-label">CSS3</span></div>
+                                        <div class="tech-item"><img src="Images/jss.svg" class="tech-icon"><span class="tech-label">JavaScript</span></div>
+                                        <div class="tech-item"><img src="Images/node.svg" class="tech-icon"><span class="tech-label">Node.js</span></div>
+                                        <div class="tech-item"><img src="Images/ejs.svg" class="tech-icon"><span class="tech-label">EJS</span></div>
+                                        <div class="tech-item"><img src="Images/mongo.svg" class="tech-icon"><span class="tech-label">MongoDB</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Beyond the Cover -->
+                        <div class="project-card">
+                            <div class="project-card-inner">
+                                <div class="project-img-wrapper">
+                                    <img src="Images/book1.png" alt="Beyond the Cover" class="project-img">
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="" class="project-link" title="View Source Code">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                            <a href="" class="project-link" title="Watch Demo">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-number">02</div>
+                                    <h3 class="project-name">Beyond the Cover 📚</h3>
+                                    <p class="project-desc">
+                                        A book discovery platform built for readers who are tired of hopping between tabs.
+                                        Scrapes and aggregates reviews from multiple sites using BeautifulSoup, then ranks
+                                        and presents them through a clean Flask interface with SQLite caching —
+                                        find your next favourite read in minutes, not hours.
+                                    </p>
+                                    <div class="project-tech">
+                                        <div class="tech-item"><img src="Images/html5.svg" class="tech-icon"><span class="tech-label">HTML5</span></div>
+                                        <div class="tech-item"><img src="Images/css.svg" class="tech-icon"><span class="tech-label">CSS3</span></div>
+                                        <div class="tech-item"><img src="Images/python.svg" class="tech-icon"><span class="tech-label">Python</span></div>
+                                        <div class="tech-item"><img src="Images/bs.png" class="tech-icon"><span class="tech-label">BeautifulSoup</span></div>
+                                        <div class="tech-item"><img src="Images/flask.svg" class="tech-icon"><span class="tech-label">Flask</span></div>
+                                        <div class="tech-item"><img src="Images/sql3.png" class="tech-icon"><span class="tech-label">SQLite3</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: MixUp -->
+                        <div class="project-card">
+                            <div class="project-card-inner">
+                                <div class="project-img-wrapper">
+                                    <img src="Images/ecom.png" alt="MixUp" class="project-img">
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="" class="project-link" title="View Source Code">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                            <a href="" class="project-link" title="Watch Demo">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-number">03</div>
+                                    <h3 class="project-name">MixUp 🎲</h3>
+                                    <p class="project-desc">
+                                        A full-stack e-commerce platform for in-game items and merch. Built secure
+                                        user authentication, cart management, and purchase flows using PHP and MongoDB.
+                                        Features a custom admin panel for inventory management and secure transaction
+                                        handling — because even virtual stores deserve real engineering.
+                                    </p>
+                                    <div class="project-tech">
+                                        <div class="tech-item"><img src="Images/html5.svg" class="tech-icon"><span class="tech-label">HTML5</span></div>
+                                        <div class="tech-item"><img src="Images/css.svg" class="tech-icon"><span class="tech-label">CSS3</span></div>
+                                        <div class="tech-item"><img src="Images/jss.svg" class="tech-icon"><span class="tech-label">JavaScript</span></div>
+                                        <div class="tech-item"><img src="Images/php.svg" class="tech-icon"><span class="tech-label">PHP</span></div>
+                                        <div class="tech-item"><img src="Images/mongo.svg" class="tech-icon"><span class="tech-label">MongoDB</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: AWARE -->
+                        <div class="project-card">
+                            <div class="project-card-inner">
+                                <div class="project-img-wrapper">
+                                    <img src="Images/aware.png" alt="AWARE" class="project-img">
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="" class="project-link" title="View on Figma">
+                                                <i class="fa-brands fa-figma"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-number">04</div>
+                                    <h3 class="project-name">AWARE 🏨</h3>
+                                    <p class="project-desc">
+                                        A UX-focused hotel booking app designed for safety-conscious travellers during COVID-19.
+                                        Led the full design process — from user research and Balsamiq wireframes to high-fidelity
+                                        Figma prototypes. Incorporated iterative user feedback at each stage to ensure the
+                                        final experience was both intuitive and genuinely reassuring.
+                                    </p>
+                                    <div class="project-tech">
+                                        <div class="tech-item"><img src="Images/miro.png" class="tech-icon"><span class="tech-label">Miro</span></div>
+                                        <div class="tech-item"><img src="Images/bm.png" class="tech-icon"><span class="tech-label">Balsamiq</span></div>
+                                        <div class="tech-item"><img src="Images/figma.svg" class="tech-icon"><span class="tech-label">Figma</span></div>
+                                        <div class="tech-item"><img src="Images/xd.svg" class="tech-icon"><span class="tech-label">Adobe XD</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="skills-item">
-                    <img src="Images/css.svg" alt="CSS" class="skills-image" title="CSS">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/jss.svg" alt="javascript" class="skills-image" title="JavaScript">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/bootstrap.svg" alt="bootstrap" class="skills-image" title="Bootstrap">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/node.svg" alt="Node" class="skills-image" title="Node.js">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/express.svg" alt="Express" class="skills-image" title="Express">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/python.svg" alt="Python" class="skills-image" title="Python">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/java2.svg" alt="Java" class="skills-image" title="Java">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/php.svg" alt="PHP" class="skills-image" title="PHP">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/react.svg" alt="React" class="skills-image" title="React.js">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/vue.svg" alt="Vue" class="skills-image" title="Vue.js">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/ejs.svg" alt="EJS" class="skills-image" title="Ejs View Engine">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/flask.svg" alt="Flask" class="skills-image" title="Flask">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/bs.png" alt="Beautiful Soup" class="skills-image" title="Beautiful Soup">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/mongo.svg" alt="Mongo DB" class="skills-image" title="Mongo DB">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/sql3.png" alt="Sqlite3" class="skills-image" title="Sqlite3">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/git.svg" alt="Git" class="skills-image" title="Git">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/github.svg" alt="GitHub" class="skills-image" title="GitHub">
-                </div> 
-                <div class="skills-item">
-                    <img src="Images/android-studio.svg" alt="Android Studio" class="skills-image" title="Android Studio">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/kotlin.svg" alt="Kotlin" class="skills-image" title="Kotlin">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/arduino.svg" alt="arduino" class="skills-image" title="Arduino IDE">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/nativescript.svg" alt="nativescript" class="skills-image" title="NativeScript">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/figma.svg" alt="Figma" class="skills-image" title="Figma">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/xd.svg" alt="Adobe xD" class="skills-image" title="Adobe xD">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/miro.png" alt="Miro" class="skills-image" title="Miro">
-                </div>
-                <div class="skills-item">
-                    <img src="Images/bm.png" alt="Balsamiq" class="skills-image" title="Balsamiq">
-                </div>
+
+                <button class="slider-btn slider-next" id="nextBtn" aria-label="Next project">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="slider-dots" id="sliderDots">
+                <button class="dot active" data-index="0" aria-label="Project 1"></button>
+                <button class="dot" data-index="1" aria-label="Project 2"></button>
+                <button class="dot" data-index="2" aria-label="Project 3"></button>
+                <button class="dot" data-index="3" aria-label="Project 4"></button>
             </div>
         </section>
 
-        <!-- Project Section -->
-        <section id = "projects">
-            <h2 class = "section-headings"> PROJECTS 💻 </h2>
-            <div class="project-container">
-                <div class="project-item">
-                    <p class="project-name"> Procast 📝 </p>
-                    <img src="Images/Procast.png" alt="Procast" class="project-image" title="Procast website">
-                    <div class="code-btns-container">
-                        <div class="code-btn-item"> <a href="" class="code-btn"> <i class="fa-brands fa-github" title="View Source code"></i></a></div>
-                        <!-- <div class="code-btn-item"> <a href="" class="code-btn"> <i class="fa-solid fa-code"></i></a></div> -->
-                        <!-- <div class="code-btn-item"> <a href="" class="code-btn"> <i class="fa-solid fa-eye"></i></a></div> -->
-                        <div class="code-btn-item"> <a href="" class="code-btn"> <i class="fa-brands fa-youtube" title="View Demo"></i></a></div>
-                    </div>
-                    <hr>
-                    <p class="project-description"> 
-                        A website based on scientific factors to overcome Procrastination. It plays the role 
-                        of a companion and makes the process easier and enjoyable. The website is customized 
-                        for each user to make it usable and impactful.
-                    </p>
-                    <br><br>
-                    <div class="project-tech-container">
-                        <div class="tech-item">
-                            <img src="Images/html5.svg" class="tech-stack-image" title="HTML">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/css.svg" class="tech-stack-image" title="CSS">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/jss.svg" class="tech-stack-image" title="Javascript">
-
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/node.svg" class="tech-stack-image" title="Node.js">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/ejs.svg" class="tech-stack-image" title="EJS">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/mongo.svg" class="tech-stack-image" title="MongoDB">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <p class="project-name"> Beyond the cover 📚 </p>
-                    <img src="Images/book1.png" alt="Beyond the Cover Website" title="Beyond the cover" class="project-image">
-                    <div class="code-btns-container">
-                        <div class="code-btn-item"> <a href="" class="code-btn"> <i class="fa-brands fa-github" title="View Source code"></i></a></div>
-                        <div class="code-btn-item"> <a href="" class="code-btn"> <i class="fa-brands fa-youtube" title="View Demo"></i></a></div>
-                    </div>
-                    <hr>
-                    <p class="project-description"> 
-                        A website made for Book Lovers!. It extracts book details and reviews from various websites,
-                        putting them altogether in one place to make it easier for readers who wants to find their
-                        next favourite read. Find you next book in minutes. 
-                    </p>
-                    <br><br>
-                    <div class="project-tech-container">
-                        <div class="tech-item">
-                            <img src="Images/html5.svg" class="tech-stack-image" title="HTML">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/css.svg" class="tech-stack-image" title="CSS">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/python.svg" class="tech-stack-image" title="Python">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/bs.png" class="tech-stack-image" title="Beautiful Soup">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/flask.svg" class="tech-stack-image" title="Flask">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/sql3.png" class="tech-stack-image" title="Sqlite3">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <p class="project-name"> MixUp 🎲</p>
-                    <img src="Images/ecom.png" alt="E-commerce Website" class="project-image" title="E-commerce website">
-                    <div class="code-btns-container">
-                        <div class="code-btn-item"> <a href="" class="code-btn"> <i class="fa-brands fa-github" title="View Source code"></i></a></div>
-                        <div class="code-btn-item"> <a href="" class="code-btn"> <i class="fa-brands fa-youtube" title="View Demo"></i></a></div>
-                    </div>
-                    <hr>
-                    <p class="project-description"> 
-                            A website that sells various in-game items and merches. It is based on 
-                            a chosen game and functions as an online game store. Users can power up or 
-                            purchase certain bundles and gifts. The data is securely stored in the database.
-                    </p>
-                    <br><br>
-                    <div class="project-tech-container">
-                        <div class="tech-item">
-                            <img src="Images/html5.svg" class="tech-stack-image" title="HTML">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/css.svg" class="tech-stack-image" title="CSS">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/jss.svg" class="tech-stack-image" title="Javascript">
-
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/php.svg" class="tech-stack-image" title="PHP">
-
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/mongo.svg" class="tech-stack-image" title="MongoDB">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <p class="project-name"> AWARE 🏨 </p>
-                    <img src="Images/aware.png" alt="Aware App" class="project-image" title="Aware app">
-                    <div class="code-btns-container">
-                        <div class="code-btn-item"> <a href="" class="code-btn"> <i class="fa-brands fa-figma" title="View on Figma"></i></a></div>
-                    </div>
-                    <hr>
-                    <p class="project-description"> 
-                        An app that was designed to help people book hotels and resorts during COVID-19. 
-                        The prototype of the app was created and all the functions were visualised. Both user's 
-                        requirements and later, user's feedbacks were considered.
-                    </p>
-                    <br><br>
-                    <div class="project-tech-container">
-                        <div class="tech-item">
-                            <img src="Images/miro.png" class="tech-stack-image" title="Miro">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/bm.png" class="tech-stack-image" title="Balsamiq">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/figma.svg" class="tech-stack-image" title="Figma">
-                        </div>
-                        <div class="tech-item">
-                            <img src="Images/xd.svg" class="tech-stack-image" title="Adobe xD">
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-
+        <!-- ═══════════════════════════════ EXPERIENCE ═══════════════════════════════ -->
         <section id="experience">
-            <h2 class = "section-headings"> EXPERIENCE 📝 </h2>
-                <div class="experience-container">
-                    <div class="experience-item">
-                        <p class="experience-title"> Android App Developer </p>
-                        <!-- <img src = "Images/skyit.png" class = "exp-com-img" alt= "" title="SkyIT Ltd."> -->
-                        <p class="experience-details"> 📅 April 2023 - September 2023 </p>
-                        <p class="experience-details"> 💻 Remote Internship | SkyIT Ltd. </p>
-                        <p class="experience-details"> 📍 Calgary, Canada </p>
-                        <br>
-                        <hr>
-                        <p class="experience-summary"> 
-                            ✔ Translated wireframes and project requirements into technical 
-                            specifications. <br> ✔ Performed periodic testing to minimize bugs 
-                            and ensure optimal app performance. <br> ✔  Managed end-to-end deployment 
-                            process to Google Play Console including release build and version management. 
-                        </p>
+            <div class="section-header">
+                <h2 class="section-heading">Experience</h2>
+                <p class="section-subheading">Where I've grown, built, and led 🌱</p>
+            </div>
+
+            <!-- ── Tab buttons ── -->
+            <div class="exp-tabs">
+                <button class="exp-tab-btn active" data-tab="work">💼 Work Experience</button>
+                <button class="exp-tab-btn" data-tab="leadership">🌟 Leadership</button>
+                <button class="exp-tab-btn" data-tab="publications">📄 Publications</button>
+                <button class="exp-tab-btn" data-tab="hackathons">🏆 Hackathons</button>
+                <button class="exp-tab-btn" data-tab="awards">🏅 Awards</button>
+            </div>
+
+            <!-- ══ WORK EXPERIENCE ══ -->
+            <div class="exp-panel active" data-panel="work">
+
+                <div class="acc-item" data-sort="202601" data-cat-label="Work">
+                    <button class="acc-header">
+                        <div class="acc-summary">
+                            <span class="acc-role">Research Assistant (Dr. Akram Bayat)</span>
+                            <span class="acc-org">Northeastern University</span>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-date">Jan 2026 - Apr 2026</span>
+                            <i class="fa-solid fa-chevron-down acc-icon"></i>
+                        </div>
+                    </button>
+                    <div class="acc-body">
+                        <p class="acc-location"><i class="fa-solid fa-location-dot"></i> San Jose, CA</p>
+                        <ul class="exp-bullets">
+                            <li>Architected a 5-agent AI framework (AEGIS) using Python and OpenAI API with shared state management, enabling autonomous multi-agent coordination for complex HCI research.</li>
+                            <li>Engineered a deterministic task Orchestrator and an interaction Scaffolding Finite State Machine, ensuring reproducible agent behavior across experiment runs.</li>
+                            <li>Built a synthetic evaluation pipeline across 15 scripts to compute 3 research metrics, eliminating IRB approval steps and accelerating the research timeline.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Python</span>
+                            <span class="exp-tag">OpenAI API</span>
+                            <span class="exp-tag">Multi-Agent Systems</span>
+                            <span class="exp-tag">AI Research</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="experience-container">
-                    <div class="experience-item">
-                        <p class="experience-title"> Student Learning Assistant (SLA) </p>
-                        <!-- <img src = "Images/skyit.png" class = "exp-com-img" alt= "" title="SkyIT Ltd."> -->
-                        <p class="experience-details"> 📅 September 2019 - April 2021 </p>
-                        <p class="experience-details"> 💻 Internship | Middlesex University Dubai </p>
-                        <p class="experience-details"> 📍 Dubai, United Arab Emirates </p>
-                        <br>
-                        <hr>
-                        <p class="experience-summary"> 
-                            ✔ Selected for the position by professors due to outstanding 
-                            academic performance. <br> ✔ Worked under the guidance of professors to provide 
-                            support and help to students. <br> ✔  Achieved an amazing opportunity to strengthen 
-                            previous learnt concepts and acquire valuable skills assisting students excel. 
-                        </p>
+                <div class="acc-item" data-sort="202509" data-cat-label="Work">
+                    <button class="acc-header">
+                        <div class="acc-summary">
+                            <span class="acc-role">Graduate Teaching Assistant (Algorithms) </span>
+                            <span class="acc-org">Northeastern University</span>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-date">Sep 2025 - Dec 2025</span>
+                            <i class="fa-solid fa-chevron-down acc-icon"></i>
+                        </div>
+                    </button>
+                    <div class="acc-body">
+                        <p class="acc-location"><i class="fa-solid fa-location-dot"></i> San Jose, CA</p>
+                        <ul class="exp-bullets">
+                            <li>Mentored 50+ graduate students in advanced algorithms, data structures, and runtime optimization — translating dense theory into practical problem-solving intuition.</li>
+                            <li>Led 10+ weekly mock technical interviews focused on time/space complexity analysis, helping students build the fluency needed to perform under real interview conditions.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Algorithms</span>
+                            <span class="exp-tag">Data Structures</span>
+                            <span class="exp-tag">Technical Mentorship</span>
+                        </div>
                     </div>
                 </div>
+
+                <div class="acc-item" data-sort="202506" data-cat-label="Work">
+                    <button class="acc-header">
+                        <div class="acc-summary">
+                            <span class="acc-role">Student Ambassador</span>
+                            <span class="acc-org">Northeastern University</span>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-date">Jun 2025 - Apr 2026</span>
+                            <i class="fa-solid fa-chevron-down acc-icon"></i>
+                        </div>
+                    </button>
+                    <div class="acc-body">
+                        <p class="acc-location"><i class="fa-solid fa-location-dot"></i> San Jose, CA</p>
+                        <ul class="exp-bullets">
+                            <li>Spearheaded 5 large-scale campus events serving 370+ international students, designing onboarding logistics that reduced friction and improved the transition experience.</li>
+                            <li>Partnered cross-functionally with 3+ university departments to coordinate campus-wide programming, building communication skills that mirror real engineering org dynamics.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Leadership</span>
+                            <span class="exp-tag">Event Coordination</span>
+                            <span class="exp-tag">Cross-functional Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-sort="202304" data-cat-label="Work">
+                    <button class="acc-header">
+                        <div class="acc-summary">
+                            <span class="acc-role">Software Engineer (Android) </span>
+                            <span class="acc-org">SkyIT Ltd. | Remote Internship</span>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-date">Apr 2023 - Sep 2023</span>
+                            <i class="fa-solid fa-chevron-down acc-icon"></i>
+                        </div>
+                    </button>
+                    <div class="acc-body">
+                        <p class="acc-location"><i class="fa-solid fa-location-dot"></i> Calgary, Canada | Remote</p>
+                        <ul class="exp-bullets">
+                            <li>Built and shipped Android features end-to-end in Kotlin — from translating design specs into technical architecture to managing the full Google Play Store release cycle.</li>
+                            <li>Owned the entire deployment pipeline including release build configuration, app signing, and version management on Google Play Console.</li>
+                            <li>Established a systematic testing protocol that reduced bug backlog and maintained app stability across every release cycle.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Kotlin</span>
+                            <span class="exp-tag">Android Studio</span>
+                            <span class="exp-tag">Google Play Console</span>
+                            <span class="exp-tag">Mobile Engineering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-sort="201909" data-cat-label="Work">
+                    <button class="acc-header">
+                        <div class="acc-summary">
+                            <span class="acc-role">Student Learning Assistant</span>
+                            <span class="acc-org">Middlesex University Dubai</span>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-date">Sep 2019 - Apr 2021</span>
+                            <i class="fa-solid fa-chevron-down acc-icon"></i>
+                        </div>
+                    </button>
+                    <div class="acc-body">
+                        <p class="acc-location"><i class="fa-solid fa-location-dot"></i> Dubai, UAE </p>
+                        <ul class="exp-bullets">
+                            <li>Handpicked by faculty for outstanding academic performance to lead learning support across technical modules for 20+ students.</li>
+                            <li>Facilitated weekly sessions and one-on-one mentorship, helping students build genuine understanding of programming fundamentals — not just passing grades.</li>
+                            <li>Developed leadership and communication skills by making complex concepts accessible under real-time pressure.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Leadership</span>
+                            <span class="exp-tag">Mentorship</span>
+                            <span class="exp-tag">Technical Teaching</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ══ LEADERSHIP ══ -->
+            <div class="exp-panel" data-panel="leadership">
+
+                <div class="acc-item" data-sort="202601" data-cat-label="Leadership">
+                    <button class="acc-header">
+                        <div class="acc-summary">
+                            <span class="acc-role">Co-Leader</span>
+                            <span class="acc-org">Innovation Consulting Group</span>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-date">Jan 2026 - May 2026 </span>
+                            <i class="fa-solid fa-chevron-down acc-icon"></i>
+                        </div>
+                    </button>
+                    <div class="acc-body">
+                        <p class="acc-location"><i class="fa-solid fa-location-dot"></i> Northeastern University Silicon Valley </p>
+                        <ul class="exp-bullets">
+                            <li>Co-organized a 100+ person in-person AI hackathon on campus — wearing three hats simultaneously as event organizer, teaching assistant, and participant.</li>
+                            <li>Managed cross-functional logistics across teams, coached participants through technical challenges in real time, and competed alongside them — demonstrating both leadership depth and hands-on ability.</li>
+                            <li>Built fluency in running high-stakes, multi-role events where you have to coordinate people, communicate clearly under pressure, and deliver results.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Event Organizing</span>
+                            <span class="exp-tag">AI Hackathon</span>
+                            <span class="exp-tag">Cross-functional Leadership</span>
+                            <span class="exp-tag">Public Speaking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-sort="202509" data-cat-label="Leadership">
+                    <button class="acc-header">
+                        <div class="acc-summary">
+                            <span class="acc-role">Co-Leader</span>
+                            <span class="acc-org">NU Algorithmic Interactive Gaming Club</span>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-date">Sep 2025 - May 2026 </span>
+                            <i class="fa-solid fa-chevron-down acc-icon"></i>
+                        </div>
+                    </button>
+                    <div class="acc-body">
+                        <p class="acc-location"><i class="fa-solid fa-location-dot"></i>Northeastern University Silicon Valley | Selected by Faculty</p>
+                        <ul class="exp-bullets">
+                            <li>Handpicked by a professor to co-lead the club, whose mission is making algorithms tangible and fun by turning them into interactive games.</li>
+                            <li>Led and hosted a vibe coding workshop teaching members how to vibe code any algorithm into a playable game using Claude Code — making abstract CS concepts genuinely engaging.</li>
+                            <li>Redesigned and upgraded the club website to better reflect its identity and attract new members.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Algorithms</span>
+                            <span class="exp-tag">Claude Code</span>
+                            <span class="exp-tag">Workshop Facilitation</span>
+                            <span class="exp-tag">Web Development</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-sort="202501" data-cat-label="Leadership">
+                    <button class="acc-header">
+                        <div class="acc-summary">
+                            <span class="acc-role">Founder &amp; President</span>
+                            <span class="acc-org">Huskies Beyond Borders</span>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-date">Jan 2025 - May 2026 </span>
+                            <i class="fa-solid fa-chevron-down acc-icon"></i>
+                        </div>
+                    </button>
+                    <div class="acc-body">
+                        <p class="acc-location"><i class="fa-solid fa-location-dot"></i> Northeastern University Silicon Valley </p>
+                        <ul class="exp-bullets">
+                            <li>Founded a campus organization dedicated to celebrating cultural belonging — built on the belief that culture and community should be genuinely fun, not performative.</li>
+                            <li>Co-produced a professional networking game for Black History Month, blending cultural celebration with career development in a format students actually wanted to attend.</li>
+                            <li>Organized a campus-wide Easter scavenger hunt, bringing students together across backgrounds through shared play and spontaneous connection.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Founding</span>
+                            <span class="exp-tag">Community Building</span>
+                            <span class="exp-tag">Cultural Programming</span>
+                            <span class="exp-tag">Event Production</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ══ PUBLICATIONS ══ -->
+            <div class="exp-panel" data-panel="publications">
+
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status pub-status--review">Accepted (Under Print)</span>
+                        <span class="pub-year">2026</span>
+                    </div>
+                    <h3 class="pub-title">AI-Generated Meta-Feedback in Student Learning and Collaboration</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-users"></i> Aisha Abdur Rahim, Ruixi Lin, Dr. Akram Bayat</p>
+                    <p class="pub-venue"><i class="fa-solid fa-building-columns"></i> PETRA 2026 - PErvasive Technologies Related to Assistive Environments · Crete, Greece </p>
+                    <div class="pub-links">
+                        <a href="#" class="pub-link pub-link--disabled"><i class="fa-solid fa-file-lines"></i> Paper (forthcoming)</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status pub-status--published">Published</span>
+                        <span class="pub-year">2022</span>
+                    </div>
+                    <h3 class="pub-title">Battling the Rise of Procrastination with the Implementation of Agile Methodology</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-users"></i> Aisha Abdur Rahim, Chinnu Mary George</p>
+                    <p class="pub-venue"><i class="fa-solid fa-building-columns"></i> ICMECE 2022 - International Conference · Barcelona, Spain (Virtually Presented) </p>
+                    <div class="pub-links">
+                        <a href="https://drive.google.com/file/d/1TDbjuFMooR0LdyR4FxPzT7XPwz3bXaEo/view" class="pub-link"><i class="fa-solid fa-file-pdf"></i> View Paper</a>
+                        <a href="#" class="pub-link"><i class="fa-solid fa-certificate"></i> Certificate</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ══ HACKATHONS ══ -->
+            <div class="exp-panel" data-panel="hackathons">
+
+                <!-- Northeastern — From Prototype to Product (Mar 2026) -->
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status hack-status">From Prototype to Product</span>
+                        <span class="pub-year">Mar 2026</span>
+                    </div>
+                    <h3 class="pub-title">Are You There?</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-laptop-code"></i> Northeastern University Hackathon</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> San Jose, CA · In-person</p>
+                    <p class="hack-desc">Built a mobile app that helps you stay connected to your loved ones — tracking their wellbeing and whereabouts without requiring direct location access, solving a real privacy-first safety problem our team identified during the hackathon.</p>
+                    <div class="card-tech-row">
+                        <span class="card-tech-item"><i class="fa-solid fa-arrow-pointer"></i> Cursor</span>
+                        <span class="card-tech-item"><i class="fa-solid fa-robot"></i> Claude Code</span>
+                        <span class="card-tech-item"><i class="fa-brands fa-apple"></i> iOS</span>
+                    </div>
+                    <div class="pub-links">
+                        <span class="hack-team"><i class="fa-solid fa-users"></i> Team · 5 members</span>
+                        <a href="https://www.linkedin.com/posts/aisha-abdur-rahim_hackathon-ai-innovation-ugcPost-7445591152428285954-6sTt/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACsvnc0BVy8uKGV3uG6F2t2IOCWqNNAvK38" class="pub-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Post</a>
+                    </div>
+                </div>
+
+                <!-- AI Valley — Build What You Love (Feb 2026) -->
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status hack-status">Build What You Love · AI Valley</span>
+                        <span class="pub-year">Feb 2026</span>
+                    </div>
+                    <h3 class="pub-title">Cysterhood — PCOS Education Assistant</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-laptop-code"></i> AI Valley Hackathon</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> San Francisco, CA · In-person</p>
+                    <p class="hack-desc">Built a RAG-powered PCOS education assistant — a judgment-free space where people can ask questions and get verified, research-backed answers. Features a read-aloud mode for accessibility and source links so users can always go deeper.</p>
+                    <div class="card-tech-row">
+                        <span class="card-tech-item"><i class="fa-solid fa-brain"></i> MiniMax API</span>
+                        <span class="card-tech-item"><i class="fa-solid fa-database"></i> Chroma (RAG)</span>
+                        <span class="card-tech-item"><i class="fa-solid fa-code"></i> Replit</span>
+                        <span class="card-tech-item"><i class="fa-solid fa-volume-high"></i> Text-to-Speech</span>
+                    </div>
+                    <div class="pub-links">
+                        <span class="hack-team"><i class="fa-solid fa-users"></i> Team · 4 members</span>
+                        <a href="https://www.linkedin.com/posts/aisha-abdur-rahim_aivalley-womenintech-youterusmatters-ugcPost-7428584418182647809-yLtJ/" target="_blank" rel="noopener" class="pub-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Post</a>
+                    </div>
+                </div>
+
+                <!-- Salesforce TDX 2025 (Mar 2025) -->
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status hack-status">Salesforce TDX</span>
+                        <span class="pub-year">Mar 2025</span>
+                    </div>
+                    <h3 class="pub-title">AI Expense Management Agent</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-laptop-code"></i> Salesforce TDX Hackathon</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> San Francisco, CA · In-person</p>
+                    <p class="hack-desc">Built an AI agent that ingests expense data from PDFs and other documents and automatically generates reimbursement requests — eliminating the manual overhead that made expense reporting a pain point our team kept running into.</p>
+                    <div class="card-tech-row">
+                        <span class="card-tech-item"><i class="fa-solid fa-cloud"></i> Salesforce Agentforce</span>
+                    </div>
+                    <div class="pub-links">
+                        <span class="hack-team"><i class="fa-solid fa-users"></i> Team · 5 members</span>
+                        <a href="https://www.linkedin.com/posts/aisha-abdur-rahim_nuexperientialbreak2025-nubeyondtheclassroom-ugcPost-7303317034254163968-oD9e/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACsvnc0BVy8uKGV3uG6F2t2IOCWqNNAvK38" class="pub-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Post</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ══ AWARDS ══ -->
+            <div class="exp-panel" data-panel="awards">
+
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status award-badge">✦ Academic Excellence</span>
+                        <span class="pub-year">2026</span>
+                    </div>
+                    <h3 class="pub-title">Laurel &amp; Scroll Honor Society</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-university"></i> Northeastern University Silicon Valley</p>
+                    <p class="pub-venue"><i class="fa-solid fa-medal"></i> Inducted into the Laurel & Scroll Honor Society in recognition of exceptional academic performance and student achievement — one of the university's most prestigious academic distinctions.</p>
+                    <div class="pub-links">
+                        <span class="hack-team"><i class="fa-solid fa-user"></i> Individual</span>
+                        <a href="https://www.linkedin.com/posts/northeastern-silicon-valley_as-the-spring-semester-draws-to-a-close-activity-7452427019537113089-5UA-" target="_blank" rel="noopener" class="pub-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Post</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status award-badge">✦ Student Recognition</span>
+                        <span class="pub-year">2026</span>
+                    </div>
+                    <h3 class="pub-title">Outstanding Student Network Award</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-university"></i> Northeastern University Silicon Valley</p>
+                    <p class="pub-venue"><i class="fa-solid fa-medal"></i> Recognized for outstanding contributions to the student community — flown to the Boston campus to receive the award in person.</p>
+                    <div class="pub-links">
+                        <span class="hack-team"><i class="fa-solid fa-user"></i> Individual</span>
+                        <a href="https://www.linkedin.com/posts/northeastern-silicon-valley_as-the-spring-semester-draws-to-a-close-activity-7452427019537113089-5UA-" target="_blank" rel="noopener" class="pub-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Post</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status award-badge">✦ Community &amp; Inclusion</span>
+                        <span class="pub-year">2026</span>
+                    </div>
+                    <h3 class="pub-title">Global Champion Award</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-university"></i> Northeastern University Silicon Valley</p>
+                    <p class="pub-venue"><i class="fa-solid fa-medal"></i> Recognizes a student who has built belonging and inclusion on campus through cross-cultural and intercultural activities — a direct reflection of the community built through Huskies Beyond Borders.</p>
+                    <div class="pub-links">
+                        <span class="hack-team"><i class="fa-solid fa-user"></i> Individual</span>
+                        <a href="https://www.linkedin.com/posts/northeastern-silicon-valley_as-the-spring-semester-draws-to-a-close-activity-7452427019537113089-5UA-" target="_blank" rel="noopener" class="pub-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Post</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status award-badge">✦ Leadership</span>
+                        <span class="pub-year">2026</span>
+                    </div>
+                    <h3 class="pub-title">Silicon Valley Leadership Legacy Award</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-university"></i> Northeastern University Silicon Valley</p>
+                    <p class="pub-venue"><i class="fa-solid fa-medal"></i> Awarded each year to a select group of graduating students to recognize their lasting contributions to the campus community over the full duration of their time at Northeastern.</p>
+                    <div class="pub-links">
+                        <span class="hack-team"><i class="fa-solid fa-user"></i> Individual</span>
+                        <a href="https://www.linkedin.com/posts/northeastern-silicon-valley_as-the-spring-semester-draws-to-a-close-activity-7452427019537113089-5UA-" target="_blank" rel="noopener" class="pub-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Post</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status award-badge">✦ Research · 3rd Place</span>
+                        <span class="pub-year">Spring 2026</span>
+                    </div>
+                    <h3 class="pub-title">Explainable PCOS Diagnosis from Ultrasound Images</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-university"></i> Northeastern University Silicon Valley · Student Research &amp; Innovation Showcase</p>
+                    <p class="pub-venue"><i class="fa-solid fa-medal"></i> Built AI models for PCOS diagnosis that prioritize explainability over raw accuracy — focusing on what the model actually learns from ultrasound images and whether its decisions are clinically meaningful, not just statistically high.</p>
+                    <div class="pub-links">
+                        <span class="hack-team"><i class="fa-solid fa-users"></i> Team · 4 members</span>
+                        <a href="https://www.linkedin.com/posts/yue-chen-1113a8382_machinelearning-healthcareai-explainableai-ugcPost-7453299290707374080-AGEA/" target="_blank" rel="noopener" class="pub-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Post</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-card-top">
+                        <span class="pub-status award-badge">✦ Discovery Award</span>
+                        <span class="pub-year">Spring 2025</span>
+                    </div>
+                    <h3 class="pub-title">BloomDaily — Medication Adherence App</h3>
+                    <p class="pub-authors"><i class="fa-solid fa-university"></i> Northeastern University Silicon Valley · Student Research &amp; Innovation Showcase</p>
+                    <p class="pub-venue"><i class="fa-solid fa-medal"></i> Designed a gamified medication adherence app prototype where long-term medication users grow a virtual plant by staying consistent — transforming daily healthcare routines into something genuinely rewarding and hard to quit.</p>
+                    <div class="pub-links">
+                        <span class="hack-team"><i class="fa-solid fa-users"></i> Team · 5 members</span>
+                        <a href="https://lnkd.in/evckdZUn" target="_blank" rel="noopener" class="pub-link"><i class="fa-brands fa-figma"></i> View Prototype</a>
+                        <a href="https://www.linkedin.com/posts/yi-zoe-zhang-800765187_innovativedesign-applicationconcept-gamification-activity-7321603943749337089-oXjj?utm_source=share&utm_medium=member_desktop&rcm=ACoAACsvnc0BVy8uKGV3uG6F2t2IOCWqNNAvK38" class="pub-link pub-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Post</a>
+                    </div>
+                </div>
+
+            </div>
+
         </section>
 
-
-        <!-- This is the Contact Section -->
+        <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
         <section id="contact">
-            <h2 class="section-headings"> CONTACT 📱</h2>
-            <div class = "contact-container">
-                <div class = "contact-item">
-                    <img src = "Images/contact_mail.gif" class="contact-image">
-                </div>
-                <div class="contact-item" id="contact-2">
-                    <p class="contact-summary">
-                        <br> 
-                        I am passionate about coding and love working on new and innovative
-                        projects. Like my work and want to hire or refer me? <br> <br> Drop a quick email 
-                        or connect with me and I will get back to you at the earliest 📲 </p>
-                    <div class="contact-btns-container">
-                        <div class="contact-btn-item"> <a href="https://github.com/aishaar" target="_blank" class="contact-btn"> <i class="fa-brands fa-github" title="GitHub" style = color:black;></i></a></div>
-                        <div class="contact-btn-item"> <a href="mailto:aishaar283@gmail.com" class="contact-btn"> <i class="fa-solid fa-envelope" title="Email" style = color:brown;></i></a></div>
-                        <div class="contact-btn-item"> <a href="https://www.linkedin.com/in/aisha-abdur-rahim/" target="_blank" class="contact-btn"> <i class="fa-brands fa-linkedin" title="LinkedIn" style = color:blue;></i></a></div>
+            <div class="section-header">
+                <h2 class="section-heading">Let's Connect</h2>
+                <p class="section-subheading">Always up for a good conversation about tech, books, or your next big idea 💬</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <img src="Images/contact_mail.gif" class="contact-gif" alt="Contact">
+                    <div class="contact-text">
+                        <p class="contact-body">
+                            I'm actively looking for full-time roles in Full-Stack or Mobile Engineering.
+                            If something I've built resonates with you or you just want to talk tech,
+                            my inbox is always open :)
+                        </p>
+                        <div class="contact-links">
+                            <a href="https://github.com/aishaar" target="_blank" class="contact-link github">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="mailto:aishaar283@gmail.com" class="contact-link email">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Email Me</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/aisha-abdur-rahim/" target="_blank" class="contact-link linkedin">
+                                <i class="fa-brands fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
                     </div>
-                </div>       
+                </div>
             </div>
         </section>
 
-        <footer class = "footer">
-            <p class = "footer-tag"> © Made with ❤ by AAR </p>
-            <p class="footer-date"> Last Updated: 12-02-2024 📅</p>
+        <footer>
+            <div class="footer-content">
+                <p class="footer-brand">© Made with curiosity by AAR</p>
+                <p class="footer-note">Always learning · Always building</p>
+                <p class="footer-updated">Last updated: May 2026</p>
+            </div>
         </footer>
+
     </main>
+
+    <script>
+        // ── Theme Toggle ──────────────────────────────────────────────
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon   = document.getElementById('themeIcon');
+        const html        = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        setThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            setThemeIcon(next);
+        });
+
+        function setThemeIcon(theme) {
+            themeIcon.className = theme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        }
+
+        // ── Mobile Menu ───────────────────────────────────────────────
+        const hamburger  = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+        function closeMobile() { mobileMenu.classList.remove('open'); }
+
+        // ── Project Slider ────────────────────────────────────────────
+        const track   = document.getElementById('sliderTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots    = document.querySelectorAll('.dot');
+        const total   = document.querySelectorAll('.project-card').length;
+        let current   = 0;
+
+        function goTo(index) {
+            current = Math.max(0, Math.min(index, total - 1));
+            track.style.transform = `translateX(-${current * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            prevBtn.disabled = current === 0;
+            nextBtn.disabled = current === total - 1;
+        }
+
+        prevBtn.addEventListener('click', () => goTo(current - 1));
+        nextBtn.addEventListener('click', () => goTo(current + 1));
+        dots.forEach(dot => dot.addEventListener('click', () => goTo(+dot.dataset.index)));
+
+        // Swipe support
+        let touchStartX = 0;
+        track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft')  goTo(current - 1);
+            if (e.key === 'ArrowRight') goTo(current + 1);
+        });
+
+        goTo(0);
+
+        // ── Skills Filter ─────────────────────────────────────────
+        const filterBtns  = document.querySelectorAll('.filter-btn');
+        const skillItems  = document.querySelectorAll('.skills-items-grid .tech-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                skillItems.forEach(item => {
+                    const cats = item.dataset.cat.split(' ');
+                    const show = filter === 'all' || cats.includes(filter);
+                    item.classList.toggle('hidden', !show);
+                });
+            });
+        });
+
+        // ── Experience Tabs ───────────────────────────────────────────
+        document.querySelectorAll('.exp-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.exp-tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                document.querySelector(`.exp-panel[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+            });
+        });
+
+        // ── Experience Accordion (event delegation — works for clones too) ──
+        document.getElementById('experience').addEventListener('click', e => {
+            const header = e.target.closest('.acc-header');
+            if (!header) return;
+            const item   = header.closest('.acc-item');
+            const panel  = item.closest('.exp-panel');
+            const isOpen = item.classList.contains('open');
+            panel.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        });
+
+
+        // ── Active nav on scroll ──────────────────────────────────────
+        const sections  = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let active = '';
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 120) active = sec.id;
+            });
+            navAnchors.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === `#${active}`);
+            });
+        });
+    </script>
 </body>
 </html>
