@@ -545,6 +545,7 @@ section {
 .project-img-wrapper {
     position: relative;
     overflow: hidden;
+    height: 440px;
 }
 
 .project-img {
@@ -552,6 +553,17 @@ section {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+}
+
+.project-img-wrapper--portrait .project-img {
+    object-fit: cover;
+    object-position: center top;
+    transform: scale(1.45);
+    transform-origin: center 18%;
+}
+
+.project-img-wrapper--portrait:hover .project-img {
+    transform: scale(1.52);
 }
 
 .project-overlay {
@@ -659,6 +671,23 @@ section {
 }
 
 .tech-item:hover .tech-icon {
+    opacity: 1;
+}
+
+.tech-icon-fa {
+    font-size: 34px;
+    line-height: 1;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    color: var(--text-primary);
+    transition: opacity var(--transition);
+}
+
+.tech-item:hover .tech-icon-fa {
     opacity: 1;
 }
 
@@ -848,6 +877,11 @@ section {
     font-size: 0.85rem;
     color: var(--accent-amber);
     font-weight: 600;
+}
+
+.acc-org--speaking {
+    color: var(--text-muted);
+    font-weight: 500;
 }
 
 .acc-meta {
@@ -1118,6 +1152,79 @@ section {
 .card-tech-item i {
     font-size: 0.7rem;
     color: var(--text-muted);
+}
+
+/* ════════════════════════════════════════════════════════════
+   BEYOND THE CODE
+════════════════════════════════════════════════════════════ */
+#beyond {
+    background: var(--bg-secondary);
+    max-width: 100%;
+    padding: 90px 6%;
+}
+
+#beyond .section-header {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.beyond-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.beyond-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.beyond-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.beyond-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.beyond-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.beyond-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.beyond-desc strong {
+    color: var(--accent-amber);
+    font-weight: 700;
+}
+
+.beyond-cta {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--border);
+}
+
+@media (max-width: 760px) {
+    .beyond-grid { grid-template-columns: 1fr; }
 }
 
 /* ════════════════════════════════════════════════════════════
